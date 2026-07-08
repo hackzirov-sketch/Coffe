@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef } from "react"
+import Image from "next/image"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -50,11 +51,16 @@ export default function SignatureMenu() {
         <div ref={cardsRef} className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {menuItems.map((item) => (
             <GlassCard key={item.id} className="flex flex-col">
-              <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-xl bg-gradient-to-br from-accent-coffee/20 to-bg-tertiary">
-                <div className="flex h-full items-center justify-center">
-                  <div className="h-20 w-16 rounded-full bg-gradient-to-b from-accent-coffee/50 via-accent-gold/15 to-transparent blur-sm" />
-                </div>
-                <span className="absolute top-3 left-3 rounded-full bg-accent-gold/15 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-accent-gold">
+              <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-xl">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover transition-all duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/40 via-transparent to-transparent" />
+                <span className="absolute top-3 left-3 rounded-full bg-accent-gold/15 backdrop-blur-md px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-accent-gold">
                   {item.tag}
                 </span>
               </div>

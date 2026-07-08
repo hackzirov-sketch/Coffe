@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef } from "react"
+import Image from "next/image"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import GlassCard from "./GlassCard"
@@ -84,15 +85,15 @@ export default function HeroSection() {
           <div className="relative aspect-[4/5] w-[320px] sm:w-[400px] lg:w-[480px]">
             <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-accent-coffee/20 via-accent-gold/10 to-transparent blur-3xl" />
             <div className="glass relative h-full w-full overflow-hidden rounded-[2rem]">
-              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent-coffee/30 via-bg-tertiary to-bg-primary">
-                <div className="relative h-48 w-36 sm:h-64 sm:w-48">
-                  <div className="absolute top-0 left-1/2 h-full w-[60%] -translate-x-1/2 rounded-full bg-gradient-to-b from-accent-coffee/60 via-accent-gold/20 to-transparent blur-sm" />
-                  <div className="absolute top-1/2 left-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-gold/10 blur-xl" />
-                  <div className="absolute bottom-[15%] left-1/2 h-[55%] w-[55%] -translate-x-1/2 rounded-full bg-gradient-to-t from-accent-coffee/70 to-accent-coffee/20" />
-                  <div className="absolute bottom-[25%] left-1/2 h-[8px] w-[30%] -translate-x-1/2 rounded-full bg-accent-gold/30 blur-[2px]" />
-                  <div className="absolute bottom-[18%] left-1/2 h-[4px] w-[20%] -translate-x-1/2 rounded-full bg-accent-cream/20 blur-[1px]" />
-                </div>
-              </div>
+              <Image
+                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80&fit=crop"
+                alt="Premium coffee"
+                fill
+                className="object-cover transition-all duration-700 hover:scale-105"
+                sizes="(max-width: 640px) 320px, (max-width: 1024px) 400px, 480px"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/30 via-transparent to-transparent" />
             </div>
           </div>
 

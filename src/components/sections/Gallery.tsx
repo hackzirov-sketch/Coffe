@@ -1,20 +1,13 @@
 "use client"
 
 import { useRef } from "react"
+import Image from "next/image"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import AnimatedSection from "./AnimatedSection"
 import SectionLabel from "./SectionLabel"
 import { galleryImages } from "@/lib/data"
-
-const galleryColors = [
-  "from-accent-coffee/40 via-accent-gold/10 to-transparent",
-  "from-accent-coffee/30 to-bg-tertiary",
-  "from-bg-tertiary to-accent-coffee/20",
-  "from-accent-gold/15 via-accent-coffee/20 to-bg-tertiary",
-  "from-accent-coffee/30 via-bg-tertiary to-accent-gold/10",
-]
 
 export default function Gallery() {
   const gridRef = useRef<HTMLDivElement>(null)
@@ -53,19 +46,23 @@ export default function Gallery() {
         </div>
 
         <div ref={gridRef} className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {galleryImages.map((image, i) => (
+          {galleryImages.map((image) => (
             <div
               key={image.id}
               className={`group relative overflow-hidden rounded-xl ${
                 image.id === 1 ? "col-span-2 row-span-2" : image.id === 5 ? "col-span-2" : "col-span-1"
               } aspect-[4/3] ${image.id === 1 ? "aspect-auto min-h-[300px] sm:min-h-[400px]" : ""}`}
             >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${galleryColors[i]} transition-all duration-700 group-hover:scale-110`}
+              <Image
+                src={image.image}
+                alt={image.alt}
+                fill
+                className="object-cover transition-all duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="absolute bottom-0 left-0 right-0 p-5 opacity-0 transition-all duration-500 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
-                <p className="text-sm font-medium text-text-primary">{image.alt}</p>
+                <p className="text-sm font-medium text-text-primary drop-shadow-lg">{image.alt}</p>
               </div>
             </div>
           ))}

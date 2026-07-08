@@ -13,7 +13,7 @@ export const menuItems = [
     description: "Bold, concentrated, and velvety smooth. The foundation of every great coffee moment.",
     price: "$4.50",
     tag: "Classic",
-    image: "/menu/espresso.jpg",
+    image: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=600&q=80&fit=crop",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const menuItems = [
     description: "Perfectly balanced espresso with steamed milk and a cloud of silky foam.",
     price: "$5.50",
     tag: "Best Seller",
-    image: "/menu/cappuccino.jpg",
+    image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80&fit=crop",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const menuItems = [
     description: "Rich espresso meets creamy steamed milk for a smooth, comforting classic.",
     price: "$5.00",
     tag: "Smooth & Creamy",
-    image: "/menu/latte.jpg",
+    image: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=600&q=80&fit=crop",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const menuItems = [
     description: "Indulgent dark chocolate meets bold espresso, crowned with velvety milk.",
     price: "$6.00",
     tag: "Popular",
-    image: "/menu/mocha.jpg",
+    image: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=600&q=80&fit=crop",
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ export const menuItems = [
     description: "Slow-steeped for 20 hours. Smooth, naturally sweet, and refreshingly bold.",
     price: "$5.50",
     tag: "Refreshing",
-    image: "/menu/coldbrew.jpg",
+    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80&fit=crop",
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ export const menuItems = [
     description: "Layers of vanilla, steamed milk, espresso, and golden caramel drizzle.",
     price: "$6.50",
     tag: "Signature",
-    image: "/menu/macchiato.jpg",
+    image: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=600&q=80&fit=crop",
   },
 ]
 
@@ -105,11 +105,11 @@ export const testimonials = [
 ]
 
 export const galleryImages = [
-  { id: 1, alt: "Coffee pour", grid: "col-span-2 row-span-2" },
-  { id: 2, alt: "Espresso machine", grid: "col-span-1 row-span-1" },
-  { id: 3, alt: "Cozy seating", grid: "col-span-1 row-span-1" },
-  { id: 4, alt: "Coffee beans", grid: "col-span-1 row-span-1" },
-  { id: 5, alt: "Pastry pairing", grid: "col-span-2 row-span-1" },
+  { id: 1, alt: "Coffee pour", image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&fit=crop" },
+  { id: 2, alt: "Espresso machine", image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80&fit=crop" },
+  { id: 3, alt: "Cozy seating", image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=80&fit=crop" },
+  { id: 4, alt: "Coffee beans", image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&q=80&fit=crop" },
+  { id: 5, alt: "Pastry pairing", image: "https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=800&q=80&fit=crop" },
 ]
 
 export const stats = [
