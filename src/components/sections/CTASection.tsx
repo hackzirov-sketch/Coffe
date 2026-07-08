@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef } from "react"
+import Image from "next/image"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import AnimatedSection from "./AnimatedSection"
@@ -23,6 +24,16 @@ export default function CTASection() {
 
   return (
     <AnimatedSection id="reservation" className="relative overflow-hidden px-6 py-28 lg:px-12 lg:py-40">
+      <div className="absolute inset-0">
+        <Image
+          src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1600&q=80&fit=crop"
+          alt="Coffee shop atmosphere"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-bg-primary/80 backdrop-blur-sm" />
+      </div>
       <div className="absolute inset-0 flex items-center justify-center">
         <div
           ref={glowRef}

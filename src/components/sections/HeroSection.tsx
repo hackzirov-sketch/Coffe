@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import Image from "next/image"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
@@ -51,6 +51,25 @@ export default function HeroSection() {
     >
       <div ref={bgGlowRef} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-accent-gold/5 blur-[120px] opacity-0" />
 
+      <div className="absolute top-20 left-[10%] h-16 w-16 opacity-20 animate-float-slow">
+        <Image
+          src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=100&q=80&fit=crop&h=100"
+          alt=""
+          width={64}
+          height={64}
+          className="rounded-full object-cover"
+        />
+      </div>
+      <div className="absolute bottom-32 right-[8%] h-12 w-12 opacity-15 animate-float-slower">
+        <Image
+          src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=100&q=80&fit=crop&h=100"
+          alt=""
+          width={48}
+          height={48}
+          className="rounded-full object-cover"
+        />
+      </div>
+
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center gap-16 lg:flex-row lg:gap-24">
         <div ref={textRef} className="flex flex-col items-center text-center lg:items-start lg:text-left lg:max-w-xl">
           <span className="inline-block text-xs font-medium uppercase tracking-[0.25em] text-accent-gold">
@@ -86,7 +105,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-accent-coffee/20 via-accent-gold/10 to-transparent blur-3xl" />
             <div className="glass relative h-full w-full overflow-hidden rounded-[2rem]">
               <Image
-                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80&fit=crop"
+                src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80&fit=crop"
                 alt="Premium coffee"
                 fill
                 className="object-cover transition-all duration-700 hover:scale-105"

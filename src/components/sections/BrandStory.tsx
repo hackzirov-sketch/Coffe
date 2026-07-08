@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef } from "react"
+import Image from "next/image"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import AnimatedSection from "./AnimatedSection"
@@ -56,7 +57,17 @@ export default function BrandStory() {
 
           <div className="relative">
             <div className="absolute -top-8 -right-8 h-64 w-64 rounded-full bg-accent-gold/5 blur-[100px]" />
-            <div ref={statsRef} className="relative grid grid-cols-2 gap-4">
+            <div className="relative mb-6 aspect-[16/10] overflow-hidden rounded-2xl">
+              <Image
+                src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80&fit=crop"
+                alt="Coffee beans"
+                fill
+                className="object-cover transition-all duration-700 hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/40 via-transparent to-transparent" />
+            </div>
+            <div ref={statsRef} className="grid grid-cols-2 gap-4">
               {stats.map((stat) => (
                 <GlassCard key={stat.label} className="text-center">
                   <p className="font-serif text-3xl font-bold text-accent-gold sm:text-4xl">{stat.value}</p>
